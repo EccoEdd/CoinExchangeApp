@@ -1,0 +1,1 @@
+D:\Software\MAUI\CoinApp\CoinApp.csproj;x64

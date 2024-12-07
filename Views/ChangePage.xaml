@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinApp.Views.ChangePage"
+             Title="ChangePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Currency Converter"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   TextColor="#9B51E0"
+                   HorizontalOptions="Center" />
+            
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   Padding="20"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+
+                    <Grid ColumnDefinitions="0.2*, 0.4*, 0.4*">
+                        <Image Source="universal.png"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="USD" Grid.Column="1"
+                               FontSize="Medium"
+                               VerticalOptions="Center"
+                               TextColor="Black" />
+
+                        <Entry x:Name="amountEntry" Grid.Column="2" TextChanged="OnAmountEntryTextChanged"
+                               Keyboard="Numeric"
+                               FontSize="Large"
+                               TextColor="Gray"
+                               HorizontalTextAlignment="End"
+                               BackgroundColor="Transparent" />
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto, Auto">
+                        <BoxView Color="#E0E0E0"
+                                 HeightRequest="1"
+                                 HorizontalOptions="FillAndExpand" />
+
+                        <Frame WidthRequest="40"
+                               HeightRequest="40"
+                               BackgroundColor="#4F0AA8"
+                               CornerRadius="20"
+                               HorizontalOptions="Center">
+                            <Label Text="⇄"
+                                   FontSize="Title"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="0.2*, 0.4*, 0.4*">
+                        <Image Source="universal.png"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+
+                        <Label x:Name="currentCurrency" Grid.Column="1"
+                               FontSize="Medium"
+                               VerticalOptions="Center"
+                               TextColor="Black" />
+
+                        <Entry x:Name="ConvertedAmountUSD" Grid.Column="2"
+                               FontSize="Large"
+                               TextColor="Gray"
+                               HorizontalTextAlignment="End"
+                               IsReadOnly="True"
+                               BackgroundColor="Transparent" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Indicative Exchange Rate"
+                       FontSize="Caption"
+                       TextColor="Gray"
+                       HorizontalOptions="Center" />
+                <Label x:Name="exchangeRateLabel"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

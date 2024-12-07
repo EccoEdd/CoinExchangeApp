@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinApp.Views.LogInPage"
+             Title="LogIn">
+    
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="moneyback.jpg"/>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-35,-5,-2" CornerRadius="30,30,0,0" Fill="#1e1e1e"/>
+            <VerticalStackLayout Margin="30,10,30,0">
+                <Label FontSize="Title" Text="Welcome Back!" HorizontalOptions="Center" TextColor="White"/>
+                <Label FontSize="Subtitle" Text="welcome back, we missed you" HorizontalOptions="Center" TextColor="White"/>
+
+                <Grid Margin="0,50,0,30" ColumnDefinitions=".0*, .8*">
+                    <!--<RoundRectangle BackgroundColor="#b7b7b7" CornerRadius="10" HeightRequest="60" HorizontalOptions="Center"
+                                    VerticalOptions="Center" WidthRequest="60"/>-->
+                    <Entry Grid.Column="1" Placeholder="Please introduce the Username" FontSize="Medium" x:Name="UsernameEntry"/>
+                </Grid>
+                <Grid Margin="0,50,0,30" ColumnDefinitions=".0*, .8*">
+                    <!--<RoundRectangle BackgroundColor="#b7b7b7" CornerRadius="100" HeightRequest="10" HorizontalOptions="Center"
+                    VerticalOptions="Center" WidthRequest="60"/>-->
+                    <Entry Grid.Column="1" Placeholder="Please introduce the password" IsPassword="True" FontSize="Medium" x:Name="PasswordEntry"/>
+                </Grid>
+                <Button Margin="0,40,0,20" BackgroundColor="White" HeightRequest="50" Text="LogIn" FontSize="Large" Clicked="OnClickLogIn"/>
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

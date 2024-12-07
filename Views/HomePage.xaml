@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinApp.Views.HomePage"
+             Title="Home Page">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Close" Clicked="OnLogOut"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Padding="0,60,0,0">
+        <Label FontSize="Title" Text="Change Types" HorizontalOptions="Center" TextColor="#9B51E0" Padding="0,0,0,30"/>
+
+        <Label x:Name="dateUpd" FontSize="Subtitle" Text="Last Time Updated: " TextColor="White" Padding="10,0,0,0"/>
+
+        <CollectionView x:Name="collectionCoins" ItemsLayout="VerticalGrid, 2" SelectionMode="Single" VerticalOptions="FillAndExpand">
+                    
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10" InputTransparent="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapped"/>
+                        </Frame.GestureRecognizers>
+                        <Grid InputTransparent="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="universal.png" Grid.Column="0" Grid.Row="0"/>
+                            <VerticalStackLayout Grid.Column="1" Padding="5" VerticalOptions="Center">
+                                <Label Text="{Binding full_name}" FontSize="Medium" TextColor="White" FontAttributes="Bold"/>
+                                <Label Text="{Binding short_name}" FontSize="Small" TextColor="White" FontAttributes="Italic"/>
+                                <Label Text="{Binding usd_exchange_rate, StringFormat='$1 USD = {0:N2}'}" FontSize="Micro" TextColor="White"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            
+        </CollectionView>
+        
+    </StackLayout>
+</ContentPage>
